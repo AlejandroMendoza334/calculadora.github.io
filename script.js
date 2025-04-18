@@ -11,52 +11,17 @@ buttons.forEach((item) => {
     } else if(display.innerText != "" && item.id == "equal") {
         display.innerText = eval(display.innerText);
     } else if(display.innerText == "" && item.id == "equal") {
-        display.innerText = "Null";
+        display.innerText = "None";
         setTimeout(() => (display.innerText = ""), 2000);
         } else {
+            const operadores = ["+", "-", "*", "/"];
+            const ultimoCaracter = display.innerText.slice(-1);
+            if(operadores.includes(item.id) && operadores.includes(ultimoCaracter)) {
+                return;
+            }
             display.innerText += item.id;
         }
     };
 });
-
-const themeToggleBtn =document.querySelector(".theme-toggler");
-const calculator = document.querySelector(".calculator");
-const toggleIcon = doc.querySelector("toggler-icon");
-let isDark=true;
-themeToggleBtn.onclick=()=>{
-    calculator.classList.toggle("dark")
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
